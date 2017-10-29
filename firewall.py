@@ -1,19 +1,5 @@
 # basic interface given outline of the Assignment.
 
-#intial naive solution storing all rules in a list and checking each rule.
-# class Firewall:
-# 	def __init__(self, path_to_csv):
-# 		self.rules = []
-# 		with open(path_to_csv, "r") as f:
-# 			for line in f:
-# 				rule = Rule(line)
-# 				self.rules.append(rule)
-# 	def accept_packet(self, direction, protocol, port, ip_address):
-# 		for rule in self.rules:
-# 			if rule.compare(direction, protocol, port, ip_address):
-# 				return True
-# 		return False
-
 #less naive solution that will only check rules if they match the 
 # direction and protocol.
 class Firewall:
@@ -68,6 +54,22 @@ class Range_Vars:
 		if self.range:
 			return param >= self.params[0] and param <= self.params[1]
 		return param == self.params
+
+
+#intial naive solution storing all rules in a list and checking each rule.
+# class Firewall:
+# 	def __init__(self, path_to_csv):
+# 		self.rules = []
+# 		with open(path_to_csv, "r") as f:
+# 			for line in f:
+# 				rule = Rule(line)
+# 				self.rules.append(rule)
+# 	def accept_packet(self, direction, protocol, port, ip_address):
+# 		for rule in self.rules:
+# 			if rule.compare(direction, protocol, port, ip_address):
+# 				return True
+# 		return False
+
 
 # class Port:
 # 	def __init__(self, valid_ports):
